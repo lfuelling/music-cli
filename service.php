@@ -60,7 +60,7 @@ class K40STerminal {
   static $donate_documenation = "donate";
   public function donate($token) {
 	//TODO open donation page  
-	return "<script> MeinFenster = window.open(\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6VCRDVNDPMWRJ\", \"Zweitfenster\", \"width=300,height=400,left=100,top=200\"); MeinFenster.focus();</script>"
+	return "<script> MeinFenster = window.open(\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6VCRDVNDPMWRJ\", \"Zweitfenster\", \"width=300,height=400,left=100,top=200\"); MeinFenster.focus();</script>";
   }
 }
 
