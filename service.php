@@ -51,17 +51,12 @@ class K40STerminal {
 	//TODO play music file  
   }
   static $get_documenation = "download file";
-  public function get($token, $donate, $path = null) {
-	  if ($donate == "-y") {
-		  donate($token);
-	  }
-	//TODO get music file  
+  public function get($token, $path = null) {
+	$url = "Donate link:\nhttps://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6VCRDVNDPMWRJ\n\nDownload:\nhttp://" . $_SERVER["HTTP_HOST"] . $path;
+	return $url;	
   }
-  static $donate_documenation = "donate";
-  public function donate($token) {
-	//TODO open donation page  
-	return "<script> MeinFenster = window.open(\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6VCRDVNDPMWRJ\", \"Zweitfenster\", \"width=300,height=400,left=100,top=200\"); MeinFenster.focus();</script>";
-  }
+
+	
 }
 
 handle_json_rpc(new K40STerminal());
