@@ -6,7 +6,7 @@ if (function_exists('xdebug_disable')) {
     xdebug_disable();
 }
 
-class Demo {
+class K40STerminal {
   static $login_documentation = "login to the server (return token)";
   public function login($user, $passwd) {
     if (strcmp($user, 'demo') == 0 && strcmp($passwd, 'demo') == 0) {
@@ -46,8 +46,20 @@ class Demo {
                  "your IP" => $_SERVER['REMOTE_ADDR'],
                  "you acces this from" => $_SERVER["HTTP_REFERER"]);
   }
+  static $play_documenation = "play soundfile";
+  public function play($token, $path = null) {
+	//TODO play music file  
+  }
+  static $get_documenation = "download file";
+  public function get($token, $path = null) {
+	//TODO get music file  
+  }
+  static $donate_documenation = "donate";
+  public function donate($token, $path = null) {
+	//TODO open donation page  
+  }
 }
 
-handle_json_rpc(new Demo());
+handle_json_rpc(new K40STerminal());
 
 ?>
