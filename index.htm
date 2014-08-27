@@ -8,22 +8,23 @@
     <script src="js/jquery-1.7.1.min.js"></script>
     <script src="js/jquery.mousewheel-min.js"></script>
     <script src="js/jquery.terminal-min.js"></script>
+    <script src="js/terminal.commands.js"></script>
     <link href="css/jquery.terminal.css" rel="stylesheet"/>
     <link rel="icon" href="img/favicon.ico">
     <script>
-    jQuery(document).ready(function($) {	
-        $('body').terminal("service.php", {
-            login: true,
-            greetings: "You are authenticated. Run 'help' to get more information.",
-            onBlur: function() {
-                // the height of the body is only 2 lines initialy
-                return false;
-            }
-        });
-    });
+	jQuery(document).ready(function($) {
+		startKTerminal();
+	});
     </script>
   </head>
 <body>
     
 </body>
 </html>
+
+
+
+
+
+
+

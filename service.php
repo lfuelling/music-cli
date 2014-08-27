@@ -9,7 +9,7 @@ if (function_exists('xdebug_disable')) {
 class K40STerminal {
   static $login_documentation = "login to the server (return token)";
   public function login($user, $passwd) {
-    if (strcmp($user, 'demo') == 0 && strcmp($passwd, 'demo') == 0) {
+    if (strcmp($user, 'guest') == 0 && strcmp($passwd, 'abcD123') == 0) {
       // If you need to handle more than one user you can create
       // new token and save it in database
       // UPDATE users SET token = '$token' WHERE name = '$user'
@@ -21,7 +21,7 @@ class K40STerminal {
 
   static $ls_documentation = "list directory if token is valid";
   public function ls($token, $path = null) {
-    if (strcmp(md5("demo:demo"), $token) == 0) {
+    if (strcmp(md5("guest:abcD123"), $token) == 0) {
       if (preg_match("/\.\./", $path)) {
         throw new Exception("No directory traversal Dude");
       }
@@ -48,12 +48,14 @@ class K40STerminal {
   }
   static $play_documenation = "play soundfile";
   public function play($token, $path = null) {
-	//TODO play music file  
+	  
+	//TODO play music file  														<-- IMPORTANT!
+	
   }
   static $get_documenation = "download file";
   public function get($token, $path = null) {
-	$url = "Donate link:\nhttps://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6VCRDVNDPMWRJ\n\nDownload:\nhttp://" . $_SERVER["HTTP_HOST"] . $path;
-	return $url;	
+	$url[] = "Donate link:\nhttps://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6VCRDVNDPMWRJ\n\nDownload:\nhttp://" + $_SERVER["HTTP_HOST"] + $path;	
+	return $url;
   }
 
 	

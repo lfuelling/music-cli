@@ -289,12 +289,7 @@ function handle_json_rpc($object) {
                     $msg = 'PHP JSON-RPC - in "' . $url . "\"\n";
                     $msg .= "class \"$class\" has methods: " .
                         implode(", ", array_slice($methods, 0, -1)) .
-                        " and " .  $methods[count($methods)-1] . ".\n
-                        \nRun 'ls /albums' or 'ls singles' to get an 
-                        overview of the available files.\nRun 
-                        'play /singles/file.name' to listen to the songs.
-                        \nRun 'get /[singles|albums]/file.name' to download 
-                        a file.\n\nYou'll be asked if you want to donate.";
+                        " and " .  $methods[count($methods)-1] . ".\n\nRun 'ls /albums' or 'ls singles' to get an overview of the available files.\nRun 'play /singles/file.name' to listen to the songs.\nRun 'get /[singles|albums]/file.name' to download a file.\n\nYou'll be asked if you want to donate.";
                     echo response($msg, $id, null);
                 }
             } else if (!$exist) {
